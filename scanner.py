@@ -5,16 +5,7 @@ import random
 import os
 import re
 import urllib
-import requests
-
-try:
-
-    from colorama import Fore, Back, Style
-
-except ImportError:
-    print '[*] pip install colorama'
-    print '   [-] You need to install colorama Module!'
-    sys.exit()
+from colorama import *
 
 r = Fore.RED
 g = Fore.GREEN
@@ -35,15 +26,23 @@ def Welcome():
     clear = "\x1b[0m"
     colors = [36, 32, 34, 35, 31, 37, 30, 33, 38, 39]
     Text = """
-    +=============================================================+
-    |                  WebSite  InDeX  Scanner                    |
-    |                   Writed By : HydraBoy                      |
-    |                     iraniancoders.ir                        |
-    +=============================================================+
+$$\      $$\           $$\       $$$$$$\                 $$\    iraniancoders.ir        $$$$$$\ Coded by hydraboy                                                      
+$$ | $\  $$ |          $$ |      \_$$  _|                $$ |                          $$  __$$\                                                            
+$$ |$$$\ $$ | $$$$$$\  $$$$$$$\    $$ |  $$$$$$$\   $$$$$$$ | $$$$$$\  $$\   $$\       $$ /  \__| $$$$$$$\ $$$$$$\  $$$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\  
+$$ $$ $$\$$ |$$  __$$\ $$  __$$\   $$ |  $$  __$$\ $$  __$$ |$$  __$$\ \$$\ $$  |      \$$$$$$\  $$  _____|\____$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ 
+$$$$  _$$$$ |$$$$$$$$ |$$ |  $$ |  $$ |  $$ |  $$ |$$ /  $$ |$$$$$$$$ | \$$$$  /        \____$$\ $$ /      $$$$$$$ |$$ |  $$ |$$ |  $$ |$$$$$$$$ |$$ |  \__|
+$$$  / \$$$ |$$   ____|$$ |  $$ |  $$ |  $$ |  $$ |$$ |  $$ |$$   ____| $$  $$<        $$\   $$ |$$ |     $$  __$$ |$$ |  $$ |$$ |  $$ |$$   ____|$$ |      
+$$  /   \$$ |\$$$$$$$\ $$$$$$$  |$$$$$$\ $$ |  $$ |\$$$$$$$ |\$$$$$$$\ $$  /\$$\       \$$$$$$  |\$$$$$$$\\$$$$$$$ |$$ |  $$ |$$ |  $$ |\$$$$$$$\ $$ |      
+\__/     \__| \_______|\_______/ \______|\__|  \__| \_______| \_______|\__/  \__|       \______/  \_______|\_______|\__|  \__|\__|  \__| \_______|\__|      
+                                                       V1.0                                                                                                     
+                                                                                                                                          
+                                                                                                                                                            
+
+
     """
     for N, line in enumerate(Text.split("\n")):
         sys.stdout.write("\x1b[1;%dm%s%s\n" % (random.choice(colors), line, clear))
-        time.sleep(0.01)
+        time.sleep(0.05)
 
 
 def ScanIndex(WebSite=None):
@@ -201,11 +200,11 @@ try:
     Welcome()
     if '.' not in sys.argv[1]:
         print r + '    [' + y + '!' + r + ']' + r + 'Error Found:' + y +' Pleas Enter a Vilad Site Address.'
-        print '  ' + r + '    [' + y + '-' + r + ']' + r + 'Try: ' + y + ' python ' + sys.argv[0] + ' iraniancoders.ir'
+        print '  ' + r + '    [' + y + '-' + r + ']' + r + 'Try: ' + y + ' python ' + sys.argv[0] + ' example[https://iraniancoders.ir]'
     else:
         ScanIndex(WebSite=sys.argv[1])
 except Exception as Error:
     if 'list index out of range' in str(Error):
-        print '  ' + r + '    [' + y + '-' + r + ']' + r + 'Try: ' + y + ' python ' + sys.argv[0] + ' iraniancoders.ir '
+        print '  ' + r + '    [' + y + '-' + r + ']' + r + 'Try: ' + y + ' python ' + sys.argv[0] + ' example[https://iraniancoders.ir] '
     else:
         print '\n' + r + '    [' + y + '!' + r + ']' + r + ' Error Found: ' + y + str(Error)
